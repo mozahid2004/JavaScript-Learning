@@ -40,4 +40,4 @@ console.log(myDeatails.name);
 //     // kuch v ho sakta h : number / string / boolean/array/object
 // }
 
-console.log(" my name is Mozahid")
+console.log(" my name is Mozahid");
