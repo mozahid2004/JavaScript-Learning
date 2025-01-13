@@ -39,3 +39,5 @@ console.log(myDeatails.name);
 //     state: "Bihar"
 //     // kuch v ho sakta h : number / string / boolean/array/object
 // }
+
+console.log(" my name is Mozahid")
