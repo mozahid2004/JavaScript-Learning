@@ -38,7 +38,23 @@ const map = myArray.map((v,i) =>{
 })
 // console.log(map);
 
-const arrr = [1, 2, 3, 4, 5, 6, 7, 8];
+const arrr = [1, 3, 4, 5, 6, 7, 8];
 
  const arrr1 = arrr.filter(element => element>=5);
-console.log(arrr1);
+// console.log(arrr1);
+
+const found = arrr.find( num => num % 2 == 0);
+console.log(found);
+
+const index = arrr.findIndex(num => num == 5)
+console.log(index);
+
+// some,every,sort,reverse
+
+const myName = "Mozahid";
+myNameArray = [...myName];
+console.log(myNameArray);
+myNameArray.reverse();
+console.log(myNameArray);
+
+
