@@ -9,4 +9,19 @@ if (true) {
 
 // console.log(a);
 // console.log(b);
-console.log(c);
+// console.log(c);//Assecing the c 
+
+// nested scope 
+function one(){
+  const userName = "Mozahid"
+  function two(){
+    const website = "YouTube"
+    console.log(userName);
+  }
+
+  // console.log(website);
+
+  two();
+  
+}
+one()
