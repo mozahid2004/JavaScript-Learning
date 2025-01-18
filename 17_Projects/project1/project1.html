@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color switcher</title>
+    <style>
+    body{
+      background-color: #212121;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      align-items: center;
+      min-height: 80vh;
+      flex-wrap: wrap;
+      color: aliceblue;
+    }
+    .box{
+      width: 100px;
+      height: 100px;
+      border: 2px solid white;
+    }
+    #pink{
+      background-color: pink;
+    }
+    #blue{
+      background-color: blue;
+    }
+    #yellow{
+      background-color: yellow;
+    }
+    #red{
+      background-color: red;
+    }
+  </style>
+  </head>
+  <body>
+    <h1>Color Changer</h1>
+    <div class="box" id="pink"></div>
+    <div class="box" id="blue"></div>
+    <div class="box" id="yellow"></div>
+    <div class="box" id="red"></div>
+  </body>
+  <script>
+      const body = document.querySelector('body');
+      // const pink = document.querySelector('#pink');
+      // const blue = document.querySelector('#blue');
+      // const yellow = document.querySelector('#yellow');
+      // const red = document.querySelector('#red');
+      const buttons = document.querySelectorAll('.box');
+
+      // body.style.backgroundColor = "pink";
+      buttons.forEach((button) => {
+        button.addEventListener('click', (e) =>{
+          console.log(e)
+          console.log(e.target.id)
+          // if(e.target.id === 'pink'){
+          //   body.style.backgroundColor = "pink";
+          // }
+          switch(e.target.id){
+            case "pink" : 
+              body.style.backgroundColor = "pink";
+              body.style.color = "black";
+            break;
+            case "blue" :
+              body.style.backgroundColor = "blue";
+              body.style.color = "white";
+            break;
+            case "yellow" : body.style.backgroundColor = "yellow";
+            break;
+            case "red" : body.style.backgroundColor = "red";
+            break;
+          }
+        })
+      })
+
+
+      
+  </script>
+</html>
