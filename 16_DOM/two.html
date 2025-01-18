@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body style="background-color: #212121; color: #fff;">
+
+    <ul class="langName">
+      <li>JavaScripts</li>
+    </ul>
+
+  </body>
+  <script>
+    
+
+    function addTexttotul(addText){
+      const langLang = document.querySelector('.langName');
+    console.log(langLang);
+    const li = document.createElement('li');
+    li.appendChild(document.createTextNode(addText))
+    console.log(li);
+
+    langLang.appendChild(li)
+
+    }
+
+    addTexttotul('Python');
+    addTexttotul('Mojo');
+    addTexttotul('C++');
+    addTexttotul('Java');
+    
+
+    
+  </script>
+</html>

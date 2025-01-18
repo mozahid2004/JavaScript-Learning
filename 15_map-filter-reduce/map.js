@@ -112,6 +112,8 @@ const price = productName.map( (item) => {
 
 console.log(price);
 
+// 
+
 const sum = price.reduce((acc, currVal) => {
   return acc + currVal;
 },0)
