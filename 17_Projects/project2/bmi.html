@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+  </head>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      background-color: #212121;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70vh;
+    }
+    form{
+      border: 2px solid;
+      box-shadow: 3px 4px 10px;
+      width: 400px;
+      padding: 30px;
+    }
+    h2{
+      margin-bottom: 25px;
+    }
+    p{
+      text-align: left;
+    }
+    input[type="text"] {
+      width: 100%;
+      height: 30px;
+      outline: none;
+      padding: 4px;
+    }
+    #btn{
+      padding: 10px 20px;
+      width: 100%;
+      margin-top: 20px;
+    }
+    label{
+      font-size: 20px;
+      letter-spacing: 0.7px;
+    }
+    .showResult{
+      margin-top: 20px;
+    }
+  </style>
+  <body>
+
+    <form action>
+      <h2>BMI Calculator</h2>
+      <p><label for="weight">weight in Kg</label></p> <input type="text"
+        name="weight"
+        id="weight"><br /><br />
+      <p>
+        <label for="height">Height in m</label>
+      </p><input type="text"
+        name="height"
+        id="height"> <br /><br />
+
+      <input type="submit" id="btn">
+
+      <div class="showResult"> Result : <span class="result"></span></div>
+    </form>
+
+  </body>
+
+  <script>
+    const height = document.querySelector('#height');
+    const weight = document.querySelector('#weight');
+    const btn = document.querySelector('#btn')
+    const result = document.querySelector('.result');
+
+    btn.addEventListener('click' , (e) => {
+      e.preventDefault();
+      const hNum = height.value;
+       console.log(hNum);
+       
+      const wNum = weight.value;
+       console.log(wNum);
+       result.innerHTML = wNum;
+
+       finalResult = wNum / (Math.pow(hNum,2));
+       console.log(Math.pow(1.75,2))
+       
+       result.innerHTML = finalResult.toFixed(2);
+
+      //  Erroor Massage
+       if(height.value == "" || weight.value == ""){
+        alert("please Enter Height Or weight")
+        result.style.color = "red"
+        result.innerHTML = "Please Enter Approprite Weight or Height";
+       }else{
+        result.style.color = "white"
+        result.innerHTML = finalResult.toFixed(2);
+       }
+
+      //  
+               if (finalResult < 18.5) {
+           alert("You are Underweight");
+         } else if (finalResult >= 18.5 && finalResult <= 24.9) {
+           alert("You have a Normal weight");
+         } else if (finalResult >= 25 && finalResult <= 29.9) {
+           alert("You are Overweight");
+         } else {
+           alert("Invalid Input");
+         }
+
+    })
+
+    
+
+    console.log(height,weight);
+    
+  </script>
+</html>
