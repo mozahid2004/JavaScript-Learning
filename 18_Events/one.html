@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+  </head>
+  <body style="background-color: #212121; color:#fff">
+    <h1>Events</h1>
+
+    <div class="master">
+      <div class="Parent">
+        <button id=clickme>Click me</button>
+      </div>
+    </div>
+
+    <!-- Projects based Learning  -->
+
+    <ul class="list">
+      <li class="item" id="Eagle">Eagle</li>
+      <li class="item" id="Parrot">Parrot</li>
+      <li class="item" id="Peigion">Peigion</li>
+      <li class="item" id="Sparrow">Sparrow</li>
+      <li class="item" id="Hen">Hen</li>
+      <li class="item" id="Duck">Duck</li>
+    </ul>
+
+  </body>
+  <script>
+
+    const Parent = document.querySelector('.Parent');
+    const clickme = document.querySelector('#clickme');
+
+
+    // Bubbling means child to parent
+    Parent.addEventListener('click', () =>{
+      console.log('Mozahid');
+    })
+
+    // Capturing mean parent to child 
+    Parent.addEventListener('click', () =>{
+      console.log('Mozahid');
+    },true)
+
+    clickme.addEventListener('click', () =>{
+      console.log('Sahil');
+      
+    })
+
+    console.log(Parent);
+    console.log(clickme);
+
+    // Project Based Learning 
+
+    const list = document.querySelector('.list');
+    const item = document.querySelectorAll('.item');
+
+    console.log(list);
+    console.log(item);
+
+    const ArrItem = Array.from(item);
+    console.log(ArrItem);
+
+    ArrItem.forEach(element => {
+      console.log(element)
+
+      element.addEventListener('click', () =>{
+        console.log(element)
+        element.style.display = "none";
+      })
+      
+    });
+    
+    
+    
+  
+  </script>
+</html>
