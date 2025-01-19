@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+    body{
+      background-color: #212121;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70vh;
+      font-family: 'Courier New', Courier, monospace;
+      color: rgb(80, 43, 226);
+    }
+    .showTime{
+      width: 200px;
+      height: 70px;
+      background-color: orange;
+      border-radius: 15px;
+      border: 10px solid blanchedalmond;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+    }
+  </style>
+  </head>
+  <body>
+
+    <h1 class="showTime">
+      <!-- 10 : 12 AM -->
+    </h1>
+
+    <!-- <audio id="myAudio" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg"></audio>
+    <button onclick="playAudio()">Play</button>
+    <button onclick="pauseAudio()">Pause</button>
+    <button onclick="stopAudio()">Stop</button> -->
+  </body>
+
+  
+  <script>
+    const showTime = document.querySelector('.showTime');
+    console.log(showTime);
+    
+    
+    // console.log(date);
+    // console.log(date.getDate());
+    // console.log(date.toLocaleTimeString());
+    // console.log(date.toTimeString());
+
+    
+    setInterval(() => {
+      let date = new Date();
+      showTime.innerHTML = date.toLocaleTimeString();
+    }, 1000);
+
+    
+ 
+
+
+
+ 
+// audio
+
+// const audio = document.getElementById('myAudio');
+
+//   function playAudio() {
+//     audio.play();
+//     alert("play");
+//   }
+
+//   function pauseAudio() {
+//     audio.pause();
+//   }
+
+//   function stopAudio() {
+//     audio.pause();
+//     audio.currentTime = 0; // Reset playback to the start
+//   }
+
+  </script>
+</html>

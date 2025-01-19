@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fix Audio Playback</title>
+</head>
+<body>
+  <h1>Countdown Timer with Sound</h1>
+  <div id="timer">10</div>
+  <button id="startButton">Start Countdown</button>
+  <audio id="alarm-sound" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" preload="auto"></audio>
+
+  <script>
+    const timerElement = document.getElementById('timer');
+    const alarmSound = document.getElementById('alarm-sound');
+    const startButton = document.getElementById('startButton');
+
+    let countdownDuration = 10; // 10 seconds
+
+    function startCountdown(duration) {
+      let remainingTime = duration;
+
+      const interval = setInterval(() => {
+        timerElement.textContent = remainingTime;
+
+        if (remainingTime <= 0) {
+          clearInterval(interval);
+          timerElement.textContent = "Time's up!";
+          alarmSound.play(); // Play the sound after user interaction
+        }
+
+        remainingTime--;
+      }, 1000);
+    }
+
+    // Start countdown on button click
+    startButton.addEventListener('click', () => {
+      startButton.disabled = true; // Disable the button after the timer starts
+      startCountdown(countdownDuration);
+    });
+  </script>
+</body>
+</html>
