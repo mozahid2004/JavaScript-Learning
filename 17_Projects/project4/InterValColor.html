@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Inteval Chnage</title>
+    <style>
+    body{
+      background-color: black;
+      color: aliceblue;
+    }
+    .btn{
+      padding: 10px 40px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+  </style>
+  </head>
+  <body>
+    <center>
+      <h1>Color Generate and change</h1>
+      <button class="btn">Start</button>
+      <button class="btn">Stop</button>
+    </center>
+
+  </body>
+  <script>
+    
+    const Button = document.querySelectorAll('.btn')
+    const ArrBtn = Array.from(Button)
+
+// *******************************************************
+    // Random Color Generator;
+
+    const randomColor = () => {
+      const hex = '1234567890ABCDEF';
+      let color = '#';
+      for (let index = 0; index < 6; index++) {
+        // console.log(index);
+        color += hex[Math.floor(Math.random()*16)];
+        console.log([Math.floor(Math.random()*16)]);
+        
+        console.log(Math.floor(Math.random()*16));
+        console.log(color);
+        
+      }
+      return color;
+    }
+
+    
+    ArrBtn[0].addEventListener('click', () => {
+      
+
+      const autoColor = setInterval(() => {
+        document.body.style.backgroundColor = randomColor();
+      }, 1000);
+
+      ArrBtn[1].addEventListener('click', () =>{
+        clearInterval(autoColor)
+      })
+    })
+    
+
+    // **************************************************
+    
+    // const color =[
+    //   "Crimson",
+    //   "Teal",
+    //   "Amethyst",
+    //   "Amber",
+    //   "Sapphire",
+    //   "Emerald",
+    //   "Coral",
+    //   "Turquoise",
+    //   "Lavender",
+    //   "Charcoal",
+    //   "Ivory",
+    //   "Fuchsia",
+    //   "Marigold",
+    //   "Aquamarine",
+    //   "Cobalt",
+    //   "Salmon",
+    //   "Magenta",
+    //   "Periwinkle",
+    //   "Indigo",
+    //   "Ochre"
+    // ];
+    // let index = 0;
+
+    // ArrBtn[0].addEventListener('click', ()=>{
+      
+    //   const colorId =  setInterval(() => {
+
+    //   //  console.log(color[index])
+    //    document.body.style.backgroundColor = color[index];
+    //    index++;       
+       
+    //      if( index >=  color.length){
+    //         index = 0;
+    //     }
+      
+    //     ArrBtn[1].addEventListener('click', () => {
+    //     //   if( index >=  color.length){
+    //     //   clearInterval(colorId)
+    //     // }
+    //     clearInterval(colorId)
+    //     })
+
+    //    }, 1000);
+      
+
+    // })
+
+    
+  </script>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+      background-color: black;
+      color: white;
+    }
+    .langName{
+      margin:5%;
+      width: 100%;
+    }
+  </style>
+  </head>
+  <body>
+    <h1>Desi Avenger</h1>
+    <h1 class="langName"><span id="name">JavaScript</span> Language</h1>
+  </body>
+
+  <script>
+    
+
+    const name = document.querySelector('#name');
+    // const PLang = ["Java","Python","javaSctipt","TypeScript","C","C++","Anaconda"]
+
+
+    // PLang.forEach((element,index) => {
+    //     console.log(element);
+    //     setInterval(() => {
+    //          console.log(element);
+    //          name.innerHTML = element;
+    //     }, index * 1000); 
+    //   });
+
+    //   setTimeout(() => {
+    //       console.log("element")
+    //     }, 1000);
+
+
+    const names = ["Java","Python","javaSctipt","TypeScript","C","C++","Anaconda"];
+
+    setInterval(() => {
+      
+    let index = 0; // Start at the first name
+const intervalId = setInterval(() => {
+  name.innerHTML = (names[index]); // Print the current name
+  index++; // Move to the next name
+
+  if (index >= names.length) {
+    clearInterval(intervalId); // Stop the interval when all names are printed
+  }
+  }, 1000);
+
+    }, 7000);
+  </script>
+</html>
