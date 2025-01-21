@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+    body{
+      background-color: black;
+    }
+    .box{
+      width: 500px;
+      padding: 20px;
+    }
+    .profileText{
+      background-color: red;
+      padding: 10px;
+      width: 300px;
+    }
+    img{
+      width: 300px;
+    }
+  </style>
+  </head>
+  <body>
+    
+
+  </body>
+  <script>
+  
+
+  // *****************************************************
+      const requestUrl = 'https://api.github.com/users/mozahid2004';
+       const xhr = new XMLHttpRequest();
+       // Initialize the request
+       xhr.open('GET', requestUrl);
+       // Define the onreadystatechange handler
+       xhr.onreadystatechange = function () {
+         console.log(xhr.readyState); // Logs the current readyState
+         // When the request is complete (readyState === 4)
+         if (xhr.readyState === 4) {
+           const data = JSON.parse(xhr.responseText);
+           console.log(data.name);
+         
+         
+           const div = document.createElement('div');
+           const div2 = document.createElement('div');
+           const img = document.createElement('img');
+           const h2 = document.createElement('h2');
+
+             div.setAttribute('class','box');
+             div.style.background = "white";
+             document.body.appendChild(div);
+             
+             img.setAttribute('src', `${data.avatar_url}`)
+             div.appendChild(img);
+
+            div.appendChild(div2)
+
+            div2.setAttribute('class', 'profileText')
+             console.log(img);
+             console.log(div);
+
+
+             h2.innerHTML = `
+             Name : ${data.name} <br/>
+             followers : ${data.followers}<br/>
+             id : ${data.id}`
+             div2.appendChild(h2)
+          }
+       };
+       // Send the request
+       xhr.send();
+  // ****************************************************
+  //console.log('Mozahid'); //fist exututeit's asynchronous
+  // *****************************************************
+  
+
+ 
+
+  // console.log(div);
+</script>
+
+</html>
